@@ -1,14 +1,19 @@
 <script setup>
 
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import AppFooter from "./components/AppFooter.vue";
 </script>
 
 <template>
-    <div class="test">HELLO WORLD</div>
+    <app-header/>
+    <app-main/>
+    <app-footer/>
+
 </template>
 
 <style lang="sass">
-.test
-  background-color: #00df64
-  padding: 10px
-  text-align: center
+@use "./assets/styles/main"
+
+
 </style>
