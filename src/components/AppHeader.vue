@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../assets/styles/main.sass">
 <template>
-    <div class="header">
+    <div class="header-wrapper">
         <div class="container">
             <div class="header__logo">
                 <a href="#"><img src="../../public/img/dc-logo.png" alt="logo img"/></a>
@@ -20,7 +20,9 @@
                 </ul>
             </nav>
         </div>
-
+    </div>
+    <div class="jumbo-wrapper">
+        <img src="../../public/img/jumbotron.jpg" alt=""/>
     </div>
 </template>
 
@@ -34,45 +36,57 @@ export default {
 @import "src/assets/styles/partials/variables"
 
 .container
-  max-width: 1400px
-  margin: 0 auto
-  padding-inline: 10px
-  display: flex
-  justify-content: space-between
+    padding-inline: 10px
+    display: flex
+    justify-content: space-between
 
-  .navbar
-    .nav-list
-      font-size: 15px
-      list-style: none
-      display: flex
-      height: 100%
-      padding: 0
-      margin: 0
+    .header__logo
+        padding: 20px
 
-      .nav-item
-        height: 100%
+    .navbar
+        $border-bottom-width: 7px
+        $link-padding: 10px
 
-        a
-          text-decoration: none
-          height: 100%
-          padding: 10px
-          display: flex
-          place-items: center
-          font-weight: bold
+        .nav-list
+            list-style: none
+            display: flex
+            height: 100%
 
-        a:active
-          color: $color-blue
+            .nav-item
+                height: 100%
+                display: flex
+                place-items: center
 
-        &:hover
-          border-bottom: 5px solid $color-blue
+                &:hover
+                    color: $color-blue
+                    border-bottom: $border-bottom-width solid $color-blue
+                    margin-bottom: -$border-bottom-width
 
-      .nav-item.active
-        border-bottom: 5px solid $color-blue
+                    a
+                        margin-bottom: -$border-bottom-width
 
-        a
-          color: $color-blue
+                a
+                    height: 100%
+                    padding: $link-padding
+                    display: flex
+                    place-items: center
+                    font-weight: bold
 
-.header
-  padding: 15px
+            .active
+                color: $color-blue
+                border-bottom: $border-bottom-width solid $color-blue
+                margin-bottom: -$border-bottom-width
+
+                a
+                    margin-bottom: -$border-bottom-width
+
+.jumbo-wrapper
+    display: flex
+
+    img
+        object-fit: cover
+        object-position: top
+        width: 100%
+        height: 400px
 
 </style>
