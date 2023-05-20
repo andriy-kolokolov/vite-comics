@@ -172,7 +172,7 @@ ul
         display: flex
 
         .footer__middle__left
-            padding: 30px
+            padding: 30px 0 30px 0
             flex: 1 1 auto
             display: flex
             gap: 50px

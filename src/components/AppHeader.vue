@@ -36,12 +36,11 @@ export default {
 @import "src/assets/styles/partials/variables"
 
 .container
-    padding-inline: 10px
     display: flex
     justify-content: space-between
 
     .header__logo
-        padding: 20px
+        padding: 20px 0 20px 0
 
     .navbar
         $border-bottom-width: 7px

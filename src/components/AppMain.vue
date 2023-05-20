@@ -10,24 +10,42 @@
                         v-for="(card, index) in cardsData"
                         :key="index"
                         :src="card.thumb"
-                        :card-title="card.series"/>
+                        :card-title="card.series"
+                        @click="showCardModal(index)"
+                />
             </div>
         </div>
     </div>
+
+    <modal-card
+        :class="{ 'modal-card': true, show: cardModalVisible }"
+        v-model:show="cardModalVisible"
+        :card="cardsData[selectedCard]"
+    />
 </template>
 
 <script>
 import cardsDataJson from '../../public/dc-comics.json'
-import {ComicCard} from "./UI/index.js";
+import {ComicCard, ModalCard} from "./UI/index.js";
 
 export default {
-    components: {ComicCard},
+    name: "AppMain",
+    components: {
+        ComicCard, ModalCard
+    },
     data() {
         return {
-            cardsData: cardsDataJson
+            cardsData: cardsDataJson,
+            cardModalVisible: false,
+            selectedCard: 0
         }
     },
-    name: "AppMain"
+    methods: {
+        showCardModal(id) {
+            this.selectedCard = id
+            this.cardModalVisible = true;
+        }
+    }
 }
 </script>
 
@@ -53,7 +71,7 @@ export default {
 
     .container
         position: relative
-        padding: $container-padding
+        padding: $container-padding 0 $container-padding 0
 
         .title
             cursor: default
