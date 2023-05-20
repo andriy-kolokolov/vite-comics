@@ -67,6 +67,8 @@ export default {
     $grid-cols: 6
     $grid-gap: 40px
 
+    font-family: 'Montserrat', sans-serif
+
     background-color: #1c1c1c
 
     .container

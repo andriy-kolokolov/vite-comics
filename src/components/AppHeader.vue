@@ -7,16 +7,9 @@
             </div>
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#">CHARACTERS</a></li>
-                    <li class="nav-item active"><a href="#">COMICS</a></li>
-                    <li class="nav-item"><a href="#">MOVIES</a></li>
-                    <li class="nav-item"><a href="#">TV</a></li>
-                    <li class="nav-item"><a href="#">GAMES</a></li>
-                    <li class="nav-item"><a href="#">COLLECTIBLES</a></li>
-                    <li class="nav-item"><a href="#">VIDEOS</a></li>
-                    <li class="nav-item"><a href="#">FANS</a></li>
-                    <li class="nav-item"><a href="#">NEWS</a></li>
-                    <li class="nav-item"><a href="#">SHOP</a></li>
+                    <li @click="setActive(index)" v-for="(link, index) in navLinks" :key="index" :class="{'nav-item': true, 'active': index === activeLink}">
+                        <a :href="link.url">{{ link.name }}</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -28,7 +21,29 @@
 
 <script>
 export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    data() {
+        return {
+            navLinks: [
+                { name: "CHARACTERS", url: "#" },
+                { name: "COMICS", url: "#" },
+                { name: "MOVIES", url: "#" },
+                { name: "TV", url: "#" },
+                { name: "GAMES", url: "#" },
+                { name: "COLLECTIBLES", url: "#" },
+                { name: "VIDEOS", url: "#" },
+                { name: "FANS", url: "#" },
+                { name: "NEWS", url: "#" },
+                { name: "SHOP", url: "#" }
+            ],
+            activeLink: 1
+        };
+    },
+    methods: {
+        setActive(index) {
+            this.activeLink = index;
+        }
+    }
 }
 </script>
 
@@ -40,7 +55,7 @@ export default {
     justify-content: space-between
 
     .header__logo
-        padding: 20px 0 20px 0
+        padding: 20px 0
 
     .navbar
         $border-bottom-width: 7px
@@ -71,13 +86,13 @@ export default {
                     place-items: center
                     font-weight: bold
 
-            .active
-                color: $color-blue
-                border-bottom: $border-bottom-width solid $color-blue
-                margin-bottom: -$border-bottom-width
-
-                a
+                &.active
+                    color: $color-blue
+                    border-bottom: $border-bottom-width solid $color-blue
                     margin-bottom: -$border-bottom-width
+
+                    a
+                        margin-bottom: -$border-bottom-width
 
 .jumbo-wrapper
     display: flex
