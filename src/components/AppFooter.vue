@@ -31,49 +31,47 @@
                         <div class="col">
                             <h4 class="link-title">DC COMICS</h4>
                             <ul>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
+                                <li><a href="#">Characters</a></li>
+                                <li><a href="#">Comics</a></li>
+                                <li><a href="#">Movies</a></li>
+                                <li><a href="#">TV</a></li>
+                                <li><a href="#">Games</a></li>
+                                <li><a href="#">Videos</a></li>
+                                <li><a href="#">News</a></li>
                             </ul>
                         </div>
                         <div class="col">
                             <h4 class="link-title">SHOP</h4>
                             <ul>
-                                <li><a href="#">lorem</a></li>
-                                <li><a href="#">lorem</a></li>
+                                <li><a href="#">Shop DC</a></li>
+                                <li><a href="#">Shop DC Collectibles</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col">
                         <h4 class="link-title">DC</h4>
                         <ul>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
+                            <li><a href="#">Terms Of Use</a></li>
+                            <li><a href="#">lorem Privacy Policy (New)</a></li>
+                            <li><a href="#">Ad Choices</a></li>
+                            <li><a href="#">Advertising</a></li>
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Subscriptions</a></li>
+                            <li><a href="#">Talent Workshops</a></li>
+                            <li><a href="#">CPSC Certificates</a></li>
+                            <li><a href="#">Ratings</a></li>
+                            <li><a href="#">Shop Help</a></li>
+                            <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="col">
                         <h4 class="link-title">SITES</h4>
                         <ul>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
-                            <li><a href="#">lorem ipsum</a></li>
+                            <li><a href="#">DC</a></li>
+                            <li><a href="#">MAD Magazine</a></li>
+                            <li><a href="#">DC Kids</a></li>
+                            <li><a href="#">DC Universe</a></li>
+                            <li><a href="#">DC Power Visa</a></li>
 
                         </ul>
                     </div>
@@ -120,12 +118,12 @@ a
         opacity: 1
 
 ul
-    margin-top: 10px
     list-style: none
 
     li
-        margin-top: 5px
+        margin-top: 8px
 
+// FOOTER TOP
 .footer__top
     background-color: #0282f9
     padding: 40px
@@ -150,16 +148,16 @@ ul
             img
                 height: 50%
 
-
             .link-title
                 margin-left: 15px
                 color: white
                 white-space: nowrap
 
+// FOOTER MIDDLE
 .footer__middle
 
     position: relative
-    height: 80%
+    height: auto
 
     .footer__bg-img
         position: absolute
@@ -168,36 +166,42 @@ ul
         width: 100%
         height: 100%
         object-fit: cover
-        z-index: -1
+        z-index: -10
 
     .container
         display: flex
 
         .footer__middle__left
             padding: 30px
-            flex: 0 1 70%
+            flex: 1 1 auto
             display: flex
             gap: 50px
 
             .col
                 display: flex
                 flex-direction: column
+                gap: 15px
 
             .link-title
-                margin-top: 10px
                 color: white
                 white-space: nowrap
+                font-size: 24px
 
         .footer__middle__right
-            flex: 1 1 30%
+            position: relative
+            z-index: -1
             height: 100%
-            display: flex
+            flex: 0 0 50%
 
             .footer-logo-img
-                object-fit: cover
-                opacity: .7
+                position: absolute
+                transform: translate(0, -20%)
+                object-fit: none
+                opacity: 0.7
+                height: auto
+                width: 100%
 
-
+// FOOTER BOT
 .footer__bot
     background-color: #303030
     padding: 40px
@@ -205,7 +209,6 @@ ul
     .container
         display: flex
         justify-content: space-between
-
 
         .btn-sign-up
             cursor: pointer
